@@ -12,7 +12,7 @@ class ContentText extends StatelessWidget {
       title,
       style: GoogleFonts.comicNeue(
         fontSize: 14.0,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w500,
         color: Theme.of(context).brightness == Brightness.dark
             ? Colors.white
             : AppStyle.primaryColor,
