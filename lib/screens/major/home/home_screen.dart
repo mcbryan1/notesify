@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:notesify/constants/constants.dart';
+import 'package:notesify/widgets/Text/content_text.dart';
+import 'package:notesify/widgets/Text/title.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -12,16 +15,20 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        elevation: 0.0,
+        title: TitleText(
+          title: "Notesify",
+          fontSize: 25,
+        ),
+        centerTitle: true,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? AppStyle.primaryColor
+            : Colors.white,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-          ],
+          children: <Widget>[ContentText(title: "THis is good")],
         ),
       ),
     );
