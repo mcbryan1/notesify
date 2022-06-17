@@ -3,20 +3,28 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:notesify/constants/constants.dart';
 
 class ContentText extends StatelessWidget {
-  String title;
-  ContentText({Key? key, required this.title}) : super(key: key);
+  final String title;
+  final TextOverflow? overflow;
+  final int? maxLines;
+  final Color? color;
+  final double? fontSize;
+  ContentText(
+      {Key? key,
+      required this.title,
+      this.overflow,
+      this.maxLines,
+      this.color,
+      this.fontSize = 14.0})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       title,
       style: GoogleFonts.comicNeue(
-        fontSize: 14.0,
-        fontWeight: FontWeight.w500,
-        color: Theme.of(context).brightness == Brightness.dark
-            ? Colors.white
-            : AppStyle.primaryColor,
-      ),
+          fontSize: fontSize, fontWeight: FontWeight.w500, color: color),
+      overflow: overflow ?? TextOverflow.ellipsis,
+      maxLines: maxLines ?? 2,
     );
   }
 }

@@ -13,6 +13,6 @@ class MyThemes {
       colorScheme: const ColorScheme.dark());
 
   static final lightTheme = ThemeData(
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: AppStyle.bgColor,
       colorScheme: const ColorScheme.light());
 }

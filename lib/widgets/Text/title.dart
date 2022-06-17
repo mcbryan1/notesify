@@ -5,20 +5,26 @@ import 'package:notesify/constants/constants.dart';
 class TitleText extends StatelessWidget {
   final String title;
   final double? fontSize;
-  TitleText({Key? key, required this.title, this.fontSize = 18.0})
+  final FontWeight? fontWeight;
+  final TextOverflow? overflow;
+  final int? maxLines;
+  final Color? color;
+  TitleText(
+      {Key? key,
+      required this.title,
+      this.fontSize = 18.0,
+      this.overflow,
+      this.maxLines,
+      this.color,
+      this.fontWeight = FontWeight.bold})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: GoogleFonts.comicNeue(
-        fontSize: fontSize,
-        fontWeight: FontWeight.bold,
-        color: Theme.of(context).brightness == Brightness.dark
-            ? Colors.white
-            : AppStyle.primaryColor,
-      ),
+      style: GoogleFonts.quicksand(
+          fontSize: fontSize, fontWeight: fontWeight, color: color),
     );
   }
 }
