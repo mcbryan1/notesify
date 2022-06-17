@@ -127,7 +127,7 @@ class _AddNotesState extends State<AddNotes> {
                       "note_title": title,
                       "note_content": content,
                       "created_date": date,
-                      "colorId": colorId,
+                      "color_id": colorId,
                     }).then((value) {
                       Navigator.pop(context);
                       ScaffoldMessenger.of(context)

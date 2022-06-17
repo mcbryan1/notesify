@@ -18,7 +18,7 @@ class NotesDetails extends StatefulWidget {
 class _NotesDetailsState extends State<NotesDetails> {
   @override
   Widget build(BuildContext context) {
-    int colorId = widget.doc['colorId'];
+    int colorId = widget.doc['color_id'];
     return Scaffold(
       backgroundColor: AppStyle.cardColors[colorId],
       appBar: AppBar(
