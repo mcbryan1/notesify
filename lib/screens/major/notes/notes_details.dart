@@ -2,11 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:notesify/constants/constants.dart';
-import 'package:notesify/screens/major/notes/add_notes.dart';
 import 'package:notesify/screens/major/notes/edit_notes.dart';
 import 'package:notesify/widgets/Text/content_text.dart';
 import 'package:notesify/widgets/Text/title.dart';
 
+// ignore: must_be_immutable
 class NotesDetails extends StatefulWidget {
   QueryDocumentSnapshot doc;
   NotesDetails({Key? key, required this.doc}) : super(key: key);
@@ -18,13 +18,13 @@ class NotesDetails extends StatefulWidget {
 class _NotesDetailsState extends State<NotesDetails> {
   @override
   Widget build(BuildContext context) {
-    int color_id = widget.doc['color_id'];
+    int colorId = widget.doc['colorId'];
     return Scaffold(
-      backgroundColor: AppStyle.cardColors[color_id],
+      backgroundColor: AppStyle.cardColors[colorId],
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: AppStyle.cardColors[color_id],
-        title: TitleText(
+        backgroundColor: AppStyle.cardColors[colorId],
+        title: const TitleText(
             title: 'Notes details', fontSize: 22, color: Colors.white),
         centerTitle: true,
         actions: [
@@ -52,18 +52,40 @@ class _NotesDetailsState extends State<NotesDetails> {
             itemBuilder: (context) => [
               PopupMenuItem(
                 value: 'delete',
-                child: ContentText(
-                  title: 'Delete',
-                  fontSize: 16,
-                  color: Colors.white,
+                child: Row(
+                  children: const [
+                    Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    ContentText(
+                      title: 'Delete',
+                      fontSize: 16,
+                      color: Colors.red,
+                    ),
+                  ],
                 ),
               ),
               PopupMenuItem(
                 value: 'edit',
-                child: ContentText(
-                  title: 'Edit',
-                  fontSize: 16,
-                  color: Colors.white,
+                child: Row(
+                  children: const [
+                    Icon(
+                      Icons.edit,
+                      color: Colors.blue,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    ContentText(
+                      title: 'Edit',
+                      fontSize: 16,
+                      color: Colors.blue,
+                    ),
+                  ],
                 ),
               ),
             ],

@@ -1,16 +1,13 @@
-import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:notesify/constants/constants.dart';
 import 'package:notesify/screens/major/notes/add_notes.dart';
 import 'package:notesify/screens/major/notes/notes_details.dart';
 import 'package:notesify/widgets/Cards/notes_card.dart';
-import 'package:notesify/widgets/Text/content_text.dart';
 import 'package:notesify/widgets/Text/title.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -32,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AddNotes(),
+                  builder: (context) => const AddNotes(),
                 ),
               );
             },
@@ -63,8 +60,8 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: TitleText(title: "Your Recent Notes", fontSize: 22)),
           const SizedBox(
             height: 20,

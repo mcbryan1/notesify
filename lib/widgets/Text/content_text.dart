@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:notesify/constants/constants.dart';
 
 class ContentText extends StatelessWidget {
   final String title;
@@ -8,7 +7,7 @@ class ContentText extends StatelessWidget {
   final int? maxLines;
   final Color? color;
   final double? fontSize;
-  ContentText(
+  const ContentText(
       {Key? key,
       required this.title,
       this.overflow,

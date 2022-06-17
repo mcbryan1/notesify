@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +6,7 @@ import 'package:notesify/constants/constants.dart';
 import 'package:notesify/screens/major/home/home_screen.dart';
 import 'package:notesify/widgets/Text/title.dart';
 
+// ignore: must_be_immutable
 class EditNotes extends StatefulWidget {
   QueryDocumentSnapshot note;
   EditNotes({Key? key, required this.note}) : super(key: key);
@@ -40,7 +39,7 @@ class _EditNotesState extends State<EditNotes> {
         ),
         elevation: 0.0,
         backgroundColor: AppStyle.cardColors[widget.note['color_id']],
-        title: TitleText(
+        title: const TitleText(
             title: "Add A New Note", fontSize: 20, color: Colors.white),
         centerTitle: true,
       ),
@@ -135,7 +134,7 @@ class _EditNotesState extends State<EditNotes> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomeScreen(),
+                            builder: (context) => const HomeScreen(),
                           ));
                       ScaffoldMessenger.of(context)
                           .showSnackBar(successSnackBar);

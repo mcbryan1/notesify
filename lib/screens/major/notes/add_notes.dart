@@ -8,16 +8,15 @@ import 'package:notesify/constants/constants.dart';
 import 'package:notesify/widgets/Text/title.dart';
 
 class AddNotes extends StatefulWidget {
-  AddNotes({Key? key}) : super(key: key);
+  const AddNotes({Key? key}) : super(key: key);
 
   @override
   State<AddNotes> createState() => _AddNotesState();
 }
 
 class _AddNotesState extends State<AddNotes> {
-  int color_id = Random().nextInt(AppStyle.cardColors.length);
-  TextEditingController _titleController = TextEditingController();
-  TextEditingController _contentController = TextEditingController();
+  int colorId = Random().nextInt(AppStyle.cardColors.length);
+
   String title = "";
   String content = "";
   String date = DateTime.now().toString();
@@ -25,7 +24,7 @@ class _AddNotesState extends State<AddNotes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppStyle.cardColors[color_id],
+      backgroundColor: AppStyle.cardColors[colorId],
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.close, color: Colors.white),
@@ -34,8 +33,8 @@ class _AddNotesState extends State<AddNotes> {
           },
         ),
         elevation: 0.0,
-        backgroundColor: AppStyle.cardColors[color_id],
-        title: TitleText(
+        backgroundColor: AppStyle.cardColors[colorId],
+        title: const TitleText(
             title: "Add A New Note", fontSize: 20, color: Colors.white),
         centerTitle: true,
       ),
@@ -128,7 +127,7 @@ class _AddNotesState extends State<AddNotes> {
                       "note_title": title,
                       "note_content": content,
                       "created_date": date,
-                      "color_id": color_id,
+                      "colorId": colorId,
                     }).then((value) {
                       Navigator.pop(context);
                       ScaffoldMessenger.of(context)

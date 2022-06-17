@@ -9,16 +9,16 @@ class AppStyle {
   // List of colors for the cards
 
   static List<Color> cardColors = [
-    Colors.red,
-    Colors.green,
-    Colors.blue,
-    Colors.yellow,
+    const Color.fromARGB(255, 179, 12, 0),
+    const Color.fromARGB(255, 0, 116, 4),
+    const Color.fromARGB(255, 0, 84, 153),
+    const Color.fromARGB(255, 165, 148, 0),
     Colors.orange,
-    Colors.purple,
-    Colors.pink,
-    Colors.brown,
-    Colors.grey,
-    Colors.black,
+    const Color.fromARGB(255, 113, 4, 133),
+    const Color.fromARGB(255, 189, 0, 63),
+    const Color.fromARGB(255, 48, 20, 10),
+    const Color.fromARGB(255, 31, 25, 25),
+    const Color.fromARGB(255, 0, 0, 0),
   ];
 
   // Setting the text style
