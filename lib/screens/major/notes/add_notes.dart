@@ -19,7 +19,8 @@ class _AddNotesState extends State<AddNotes> {
 
   String title = "";
   String content = "";
-  String date = DateTime.now().toString();
+  String date = DateTime.now().toString().substring(0, 10);
+  String time = DateTime.now().toString().substring(11, 16);
 
   @override
   Widget build(BuildContext context) {
@@ -127,6 +128,7 @@ class _AddNotesState extends State<AddNotes> {
                       "note_title": title,
                       "note_content": content,
                       "created_date": date,
+                      "created_time": time,
                       "color_id": colorId,
                     }).then((value) {
                       Navigator.pop(context);

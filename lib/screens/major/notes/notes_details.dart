@@ -105,11 +105,24 @@ class _NotesDetailsState extends State<NotesDetails> {
             const SizedBox(
               height: 5,
             ),
-            TitleText(
-              title: widget.doc["created_date"],
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
+            Row(
+              children: [
+                TitleText(
+                  title: widget.doc['created_date'],
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
+                const SizedBox(
+                  width: 5,
+                ),
+                TitleText(
+                  title: widget.doc['created_time'],
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
+              ],
             ),
             const SizedBox(
               height: 25,

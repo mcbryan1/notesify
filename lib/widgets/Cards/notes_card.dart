@@ -28,11 +28,24 @@ Widget noteCard(
           const SizedBox(
             height: 5,
           ),
-          TitleText(
-            title: doc["created_date"],
-            fontSize: 12,
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
+          Row(
+            children: [
+              TitleText(
+                title: doc["created_date"],
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+              TitleText(
+                title: doc["created_time"],
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+              ),
+            ],
           ),
           const SizedBox(
             height: 10,
